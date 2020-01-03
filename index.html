@@ -1,0 +1,61 @@
+<html>
+<head>
+    <title>Idea</title>
+
+    <!--<link rel="stylesheet" href="styles.css" >-->
+    <script src="selection.js"></script>
+    <script src="generate.js"></script>
+</head>
+<body onload="createHtmlDropdowns();">
+
+    <div id="headerDiv">
+        <h1>Generate a Random NPC</h1>
+    </div>
+    
+    <div id="selectionDiv" class="row">
+
+        <div class="column">
+            <p>Race</p>
+            <select id="ddRace">
+                <option>Choose a race.</option>
+            </select>    
+        </div>
+        <div class="column">
+            <p>Class</p>
+            <select id="ddClass">
+                <option>Choose a class.</option>
+            </select>    
+        </div>
+        
+        <div class="column">
+            <p>Level</p>
+            <select id="ddLevel">
+                <option>Choose a level.</option>
+            </select>    
+        </div>
+
+        <div class="column">
+            <p>Alignment</p>
+            <select id="ddAlignment">
+                <option>Choose an alignment.</option>
+            </select>    
+        </div>
+
+
+    </div>
+
+    <div id="resultsDiv">
+        <br><br>
+        
+        <p id="result"></p>
+        <p id="stats"></p>
+
+        <br><br>
+
+        <button id="btnGenerate" onclick="generate()">Generate</button>
+        
+    </div>
+
+
+</body>
+</html>
