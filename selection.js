@@ -41,9 +41,20 @@ function createHtmlDropdowns() {
     var ddAlignment = document.getElementById("ddAlignment");
     var alignments = readTextFile("file:///C:/Users/Rebecca/Desktop/DndRand/files/alignments.txt");
 
+    var el = document.createElement("option");
+    el.textContent = "Any Good Alignment";
+    el.value = "Any Good Alignment";
+    ddAlignment.appendChild(el);
+
+    el = document.createElement("option");
+    el.textContent = "Any Good or Neutral Alignment";
+    el.value = "Any Good or Neutral Alignment";
+    ddAlignment.appendChild(el);
+
+
     for(var i=0; i<alignments.length; i++) {
         var item = alignments[i];
-        var el = document.createElement("option");
+        el = document.createElement("option");
         el.textContent = item;
         el.value = item;
         ddAlignment.appendChild(el);

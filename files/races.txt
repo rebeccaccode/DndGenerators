@@ -1,0 +1,10 @@
+Human
+Elf
+Gnome
+Dwarf
+Tiefling
+Aasimar
+Half-Elf
+Half-Orc
+Dragonborn
+Halfling

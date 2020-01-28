@@ -13,8 +13,6 @@ function generate() {
     var alignmentDD = document.getElementById("ddAlignment");
     var selectedAlignment = alignmentDD.options[alignmentDD.selectedIndex].value;
 
-
-
     // race
     if (selectedRace == "Choose a race.") {
         var races = readTextFile("file:///C:/Users/Rebecca/Desktop/DndRand/files/races.txt");
@@ -40,42 +38,56 @@ function generate() {
         var an = Math.floor(Math.random() * alignments.length);
         var selectedAlignment = alignments[an];
     }
-
+    else if (selectedAlignment == "Any Good Alignment") {
+        var alignments = readTextFile("file:///C:/Users/Rebecca/Desktop/DndRand/files/alignments.txt");
+        var an = Math.floor(Math.random() * 3);
+        var selectedAlignment = alignments[an];
+    }
+    else if (selectedAlignment == "Any Good or Neutral Alignment") {
+        var alignments = readTextFile("file:///C:/Users/Rebecca/Desktop/DndRand/files/alignments.txt");
+        var an = Math.floor(Math.random() * 6);
+        var selectedAlignment = alignments[an];
+    }
+   
+    // background (not selectable)
+    var backgrounds = readTextFile("file:///C:/Users/Rebecca/Desktop/DndRand/files/backgrounds.txt");
+    var bn = Math.floor(Math.random() * backgrounds.length);
+    var selectedBackground = backgrounds[bn];  
+    
     // traits (not selectable)
     var traits = readTextFile("file:///C:/Users/Rebecca/Desktop/DndRand/files/traits.txt");
     var tn = Math.floor(Math.random() * traits.length);
     var selectedTrait = traits[tn];
 
-
     // print out the results
-    var result = "You are a level " + selectedLevel + " " + selectedAlignment + " " + selectedTrait + " " + selectedRace + " " + selectedClass + "!";
+    var result = "You are a level " + selectedLevel + " " + selectedAlignment + " " + 
+    selectedTrait + " " + selectedRace + " " + selectedClass + " who used to be a " + selectedBackground + "!";
     document.getElementById("result").innerHTML = result;
-    getStats();
+  
+    // create and display the stats
+    var stats = getStats();
+    document.getElementById("stats").innerHTML = stats;
 
- 
+    // modify the stats based on selected class and race
+    var updatedStats = statsClassModification(stats, selectedClass, selectedRace);
+
+    // get the stat array modifiers
+    var statModsArray = getStatModifierArray(updatedStats);
+
+    // display updated stats and their modifiers
+    var displayHtmlStats = 
+        "STR " + updatedStats[0] + ": " + statModsArray[0] + 
+        "<br>DEX " + updatedStats[1] + ": " + statModsArray[1] + 
+        "<br>CON " + updatedStats[2] + ": " + statModsArray[2] + 
+        "<br>INT " + updatedStats[3] + ": " + statModsArray[3] + 
+        "<br>WIS " + updatedStats[4] + ": " + statModsArray[4] + 
+        "<br>CHA " + updatedStats[5] + ": " + statModsArray[5];
+    document.getElementById("updatedStats").innerHTML = displayHtmlStats;
+    
 }
 
 
-function getStats() {
 
-    var totalStats = [];
-    var i = 0;
-    while (i < 6) {
-        var s1 = Math.floor(Math.random() * 6) + 1;
-        var s2 = Math.floor(Math.random() * 6) + 1;
-        var s3 = Math.floor(Math.random() * 6) + 1;
-        var s4 = Math.floor(Math.random() * 6) + 1;
-
-        var nums = [s1, s2, s3, s4];
-        var total = s1 + s2 + s3 + s4;
-        var lowNum = Math.min(...nums);
-        var overallStat = total - lowNum;
-        totalStats.push(overallStat);
-
-        i++;
-    }
-    document.getElementById("stats").innerHTML = totalStats;
-}
 
 
 function readTextFile(file)

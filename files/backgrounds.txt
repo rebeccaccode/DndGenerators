@@ -1,0 +1,13 @@
+Acolyte
+Charlatan
+Criminal
+Entertainer
+Folk Hero
+Guild Artisan
+Hermit
+Outlander
+Noble
+Sage
+Sailor
+Soldier
+Urchin
