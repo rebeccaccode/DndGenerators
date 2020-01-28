@@ -1,6 +1,0 @@
-This is my page of notes :D
-
-
-
-PARTLY DONE:
-- add the stat modifications for classes and races, make sure to double check the ones i've already done
