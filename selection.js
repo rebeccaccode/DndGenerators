@@ -2,7 +2,7 @@ function createHtmlDropdowns() {
 
     // Race dropdown menu
     var ddRace = document.getElementById("ddRace");
-    var races = readTextFile("file:///C:/Users/Rebecca/Desktop/DndRand/files/races.txt");
+    var races = readTextFile("files/races.txt");
 
     for(var i=0; i<races.length; i++) {
         var item = races[i];
@@ -15,7 +15,7 @@ function createHtmlDropdowns() {
 
     // Class dropdown menu
     var ddClass = document.getElementById("ddClass");
-    var classes = readTextFile("file:///C:/Users/Rebecca/Desktop/DndRand/files/classes.txt");
+    var classes = readTextFile("files/classes.txt");
 
     for(var i=0; i<classes.length; i++) {
         var item = classes[i];
@@ -39,7 +39,7 @@ function createHtmlDropdowns() {
 
     // Alignment dropdown menu
     var ddAlignment = document.getElementById("ddAlignment");
-    var alignments = readTextFile("file:///C:/Users/Rebecca/Desktop/DndRand/files/alignments.txt");
+    var alignments = readTextFile("files/alignments.txt");
 
     var el = document.createElement("option");
     el.textContent = "Any Good Alignment";

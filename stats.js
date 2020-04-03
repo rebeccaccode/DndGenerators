@@ -50,7 +50,7 @@ function statsClassModification(stats, selectedClass, selectedRace) {
         newStats[3] = stats[4];
         newStats[0] = stats[5];
     }
-    else if (selectedClass == "Cleric") { // Wis, Con, Dex, Str, Int, Cha  (Medium Armor)
+    else if (selectedClass == "Cleric") { // Wis, Con, Dex, Str, Int, Cha  (medium armor)
         newStats[3] = stats[0];
         newStats[2] = stats[1];
         newStats[1] = stats[2];

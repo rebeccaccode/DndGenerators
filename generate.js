@@ -15,14 +15,14 @@ function generate() {
 
     // race
     if (selectedRace == "Choose a race.") {
-        var races = readTextFile("file:///C:/Users/Rebecca/Desktop/DndRand/files/races.txt");
+        var races = readTextFile("files/races.txt");
         var rn = Math.floor(Math.random() * races.length);
         selectedRace = races[rn];  
     }
 
     // class
     if (selectedClass == "Choose a class.") {
-        var classes = readTextFile("file:///C:/Users/Rebecca/Desktop/DndRand/files/classes.txt");
+        var classes = readTextFile("files/classes.txt");
         var cn = Math.floor(Math.random() * classes.length);
         selectedClass = classes[cn];  
     }
@@ -34,28 +34,28 @@ function generate() {
 
     // alignment
     if (selectedAlignment == "Choose an alignment.") {
-        var alignments = readTextFile("file:///C:/Users/Rebecca/Desktop/DndRand/files/alignments.txt");
+        var alignments = readTextFile("files/alignments.txt");
         var an = Math.floor(Math.random() * alignments.length);
         var selectedAlignment = alignments[an];
     }
     else if (selectedAlignment == "Any Good Alignment") {
-        var alignments = readTextFile("file:///C:/Users/Rebecca/Desktop/DndRand/files/alignments.txt");
+        var alignments = readTextFile("files/alignments.txt");
         var an = Math.floor(Math.random() * 3);
         var selectedAlignment = alignments[an];
     }
     else if (selectedAlignment == "Any Good or Neutral Alignment") {
-        var alignments = readTextFile("file:///C:/Users/Rebecca/Desktop/DndRand/files/alignments.txt");
+        var alignments = readTextFile("files/alignments.txt");
         var an = Math.floor(Math.random() * 6);
         var selectedAlignment = alignments[an];
     }
    
     // background (not selectable)
-    var backgrounds = readTextFile("file:///C:/Users/Rebecca/Desktop/DndRand/files/backgrounds.txt");
+    var backgrounds = readTextFile("files/backgrounds.txt");
     var bn = Math.floor(Math.random() * backgrounds.length);
     var selectedBackground = backgrounds[bn];  
     
     // traits (not selectable)
-    var traits = readTextFile("file:///C:/Users/Rebecca/Desktop/DndRand/files/traits.txt");
+    var traits = readTextFile("files/traits.txt");
     var tn = Math.floor(Math.random() * traits.length);
     var selectedTrait = traits[tn];
 
